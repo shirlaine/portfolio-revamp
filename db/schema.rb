@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010134448) do
+ActiveRecord::Schema.define(version: 20171010134846) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,6 +19,11 @@ ActiveRecord::Schema.define(version: 20171010134448) do
     t.string "name"
     t.string "email"
     t.text "message"
+  end
+
+  create_table "view_counters", force: :cascade do |t|
+    t.string "view"
+    t.integer "counter"
   end
 
 end
