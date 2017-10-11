@@ -10,20 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171010134846) do
+ActiveRecord::Schema.define(version: 20171011020904) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "counters", force: :cascade do |t|
+    t.string "pagename"
+    t.integer "counter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "messages", force: :cascade do |t|
     t.string "name"
     t.string "email"
     t.text "message"
-  end
-
-  create_table "view_counters", force: :cascade do |t|
-    t.string "view"
-    t.integer "counter"
   end
 
 end
